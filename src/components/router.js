@@ -11,7 +11,7 @@ const router = Router();
 
 /**
  * Route login a user
- * @name /auth/login
+ * @name /login
  * @function
  * @inner
  * @param {string} path -Express path
@@ -21,7 +21,7 @@ router.post('/login', AuthComponent.logIn);
 
 /**
  * Route register a new user
- * @name /auth/register
+ * @name /register
  * @function
  * @inner
  * @param {string} path -Express path
@@ -31,7 +31,7 @@ router.post('/register', AuthComponent.signUp);
 
 /**
  * Route logout a user
- * @name /auth/logOut
+ * @name /logOut
  * @function
  * @inner
  * @param {string} path -Express path
@@ -41,7 +41,7 @@ router.get('/logout', jwt.tokenMiddleware, AuthComponent.logOut);
 
 /**
  * Route gives info about a user
- * @name /auth/info
+ * @name /info
  * @function
  * @inner
  * @param {string} path -Express path
@@ -51,7 +51,7 @@ router.get('/info', jwt.tokenMiddleware, AuthComponent.info);
 
 /**
  * Route returns service server latency for google.com
- * @name /auth/latency
+ * @name /latency
  * @function
  * @inner
  * @param {string} path -Express path

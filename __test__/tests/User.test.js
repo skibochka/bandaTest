@@ -18,15 +18,8 @@ describe('Component -> controller', () => {
                 id: mail,
                 password: pass,
             })
-            .expect('Content-Type', /json/)
-            .expect(200)
-            .then(({ body }) => {
-                const expectBody = expect(body);
-
-                expectBody.to.have.property('data');
-
-                done();
-            })
+            .expect(307)
+            .then(() => done())
             .catch((err) => done(err));
     });
 

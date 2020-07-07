@@ -77,10 +77,8 @@ async function signUp(req, res, next) {
         }
         const salt = bcrypt.genSaltSync(5);
         req.body.password = bcrypt.hashSync(req.body.password, salt);
-        const user = await Service.signUp(req.body);
-        return res.status(200).json({
-            data: user,
-        });
+        await Service.signUp(req.body);
+        res.redirect(307, '/login');
     } catch (error) {
         if (error instanceof ValidationError) {
             return res.status(422).json({
